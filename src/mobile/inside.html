@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="page-template-inside">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link href="icons/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed">
+	<link href="icons/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+	<link href="icons/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon-precomposed">
+	<link href="icons/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+	<link href="css/style.min.css" rel="stylesheet">
+	
+	<!--[if gte IE 8]>
+	<script src="public/scripts/ie8-polyfills.min.js"></script>
+	<![endif]-->
+	
+	<title><!tag:title /!></title>
+</head>
+
+<body>
+	<div class="page">
+		<div class="canvas">
+			<header class="page-header">
+				<div class="container-fluid">
+					
+					<h2 class="logo">
+						<a href="/" title="SITENAME">
+							<img src="/sites/SHORTNAME/templates/mobile/images/logo.svg" alt="SITENAME">
+						</a>
+					</h2>
+					
+					<button type="button" class="navicon open-right-canvas">
+						<span class="sr">Toggle Navigation</span>
+						<span class="navicon-bar"></span>
+						<span class="navicon-bar"></span>
+						<span class="navicon-bar"></span>
+					</button>
+					
+				</div>
+			</header>
+			<main class="page-main">
+				<div class="page-title">
+					<div class="container-fluid">
+						
+						<h1 class="pageTitle"><!tag:title show="page" /!></h1>
+						
+					</div>
+				</div>
+				<div class="inner">
+					<div class="container-fluid">
+						
+						<div class="default-region">
+							<!region:default type="default" /!>
+						</div>
+						
+					</div>
+				</div>
+			</main>
+			<footer class="page-footer">
+				<div class="container-fluid">
+					
+					<div class="icon-list">
+						<ul>
+							<li>
+								<a href="http://facebook.com/">
+									<span class="icon icon-facebook"></span>
+									<span class="sr">Facebook</span>
+								</a>
+							</li>
+							<li>
+								<a href="http://twitter.com/">
+									<span class="icon icon-twitter"></span>
+									<span class="sr">Twitter</span>
+								</a>
+							</li>
+							<li>
+								<a href="http://instagram.com/">
+									<span class="icon icon-instagram"></span>
+									<span class="sr">Instagram</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon icon-email"></span>
+									<span class="sr">Email</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="copyright">&copy;<!tag:date format="Y" /!> SITENAME</div>
+					<div class="b40-credit"><!back40:credit /!></div>
+					
+					<div class="fullsite-link">
+						<a href="?fromMobile=false">View Full Site</a>
+					</div>
+				
+				</div>
+			</footer>
+		</div>
+		<div class="canvas-right">
+			<!nav id="nav" type="nested" /!>
+		</div>
+	</div>
+	
+	<script src="public/scripts/hammer.min.js"></script>
+	<script src="public/scripts/less/less.common.min.js"></script>
+	<script src="public/scripts/less/less.canvas-panels.min.js"></script>
+	
+</body>
+</html>

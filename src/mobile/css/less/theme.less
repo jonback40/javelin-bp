@@ -1,0 +1,243 @@
+//
+// Theme
+// ----------------------------------------------------------------------------------------------------
+
+
+// Custom Bullets
+.javelin-custom-bullets("@{images-path}bullet-default.svg"; 8px 12px; 20px);
+.javelin-custom-bullets-size(6px 6px);
+
+
+// Custom Images
+.javelin-custom-images({
+	border: @border-base;
+	border-radius: @border-radius-base;
+	box-shadow: @box-shadow-base;
+}, {
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0;
+});
+
+
+// Custom Bold Italic Font Families
+//.custom-bolditalic(@font-family-proximanova-bold; @font-family-proximanova-italic; @font-family-proximanova-bolditalic);
+
+
+// Remove floats and margins from shared content in text modules
+.javelin-unfloat-images(javelin_textItem);
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Icons
+.icon {
+	background-size: 120px 30px;
+}
+
+.icon-facebook		{ background-position: 0 0; }
+.icon-twitter		{ background-position: -30px 0; }
+.icon-instagram		{ background-position: -60px 0; }
+.icon-email			{ background-position: -90px 0; }
+
+
+// Icon List
+.icon-list {
+	line-height: 1;
+	
+	ul {
+		&:extend(.clearfix all);
+		
+		.list-unstyled();
+		.list-inline(3px);
+		
+		margin-bottom: 0;
+	}
+	
+	a {
+		.transition(opacity @animation-duration-base @animation-timing-function-base);
+		
+		opacity: 1;
+		color: inherit;
+		display: inline-block;
+		
+		&:hover {
+			opacity: .5;
+		}
+	}
+}
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Header
+.page-header {
+	.page-template-index & {
+		
+	}
+	
+	.page-template-inside & {
+		
+	}
+}
+
+
+// Logo
+.logo {
+	width: 200px;
+	
+	img {
+		.img-responsive();
+	}
+}
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Navigation
+.page-nav {
+	
+}
+
+#nav {
+	#javelin-nav.stacked();
+}
+
+
+// Navicon
+.navicon {
+	margin-top: -(floor(@navicon-height / 2));
+}
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Main Content
+.page-main {
+	> .inner {
+		padding-top: @section-spacer;
+		padding-bottom: @section-spacer;
+	}
+	
+	.page-template-index & {
+		
+	}
+	
+	.page-template-inside & {
+		
+	}
+}
+
+
+// Page Title
+.page-title {
+	padding-top: @section-spacer;
+	padding-bottom: @section-spacer;
+}
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Index Sections
+.index-section {
+	position: relative;
+	z-index: 10 !important;
+	
+	> .inner {
+		padding-top: @section-spacer;
+		padding-bottom: @section-spacer;
+	}
+}
+
+.index-section-1 {
+	
+}
+
+.index-section-2 {
+	
+}
+
+.index-section-3 {
+	
+}
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+
+
+// Footer
+.page-footer {
+	padding-top: @section-spacer;
+	background-color: @html-bg;
+	color: #fff;
+	
+	.page-template-index & {
+		
+	}
+	
+	.page-template-inside & {
+		
+	}
+}
+
+
+// Copyright
+.copyright {
+	
+}
+
+
+// Credit
+.b40-credit {
+	width: 260px; // controls the flow of text so the ampersand starts on the second line
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+	
+	a {
+		color: inherit;
+	}
+}
+
+
+// Full Site Link
+.fullsite-link {
+	a {
+		opacity: .5;
+		color: inherit;
+		
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+	}
+}
