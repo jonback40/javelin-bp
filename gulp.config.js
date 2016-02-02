@@ -7,24 +7,6 @@ module.exports = function() {
     var source = root + 'src/';
     
     
-    // Styles
-    var styles = [
-        source + 'css/*.{css,less}'
-    ];
-    
-    
-    // Scripts
-    var scripts = [
-        source + 'js/*.js'
-    ];
-    
-    
-    // HTML Templates
-    var templates = [
-        source + '*.html'
-    ];
-    
-    
     // Inject
     var inject = {
         options: {
@@ -45,9 +27,10 @@ module.exports = function() {
         source: source,
         
         // Globs
-        styles: styles,
-        scripts: scripts,
-        templates: templates,
+        styles: 'css/**/*.{css,less}',
+        scripts: 'js/**/*.js',
+        images: 'images/**/*.{jpg,jpeg,gif,png,svg}',
+        templates: '*.html',
         
         // Acceptable File Types (markup, styles, scripts, images, fonts)
         acceptedTypes: '**/*.{html,css,less,js,jpg,jpeg,gif,ico,png,svg,eot,ttf,woff,woff2}',
