@@ -44,12 +44,15 @@ module.exports = function() {
         build: build,
         source: source,
         
-        // Files
+        // Globs
         styles: styles,
         scripts: scripts,
         templates: templates,
         
-        // Plugin Options
+        // Acceptable File Types (markup, styles, scripts, images, fonts)
+        acceptedTypes: '**/*.{html,css,less,js,jpg,jpeg,gif,ico,png,svg,eot,ttf,woff,woff2}',
+        
+        // Plugins
         inject: inject
     };
     
