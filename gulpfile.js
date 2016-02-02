@@ -10,20 +10,24 @@ gulp.task('default', ['help']);
 
 
 // Tasks
-gulp.task('build', buildTask);
-gulp.task('watch', watchTask);
+gulp.task('build', ['clean', 'templates']);
+gulp.task('clean', cleanTask);
+gulp.task('templates', ['clean'], templatesTask);
 
 
 // ----------------------------------------------------------------------------------------------------
 
 
-// Build
-function buildTask() {
-    
+// Clean out the build directory before we start another build process
+function cleanTask() {
+	return del(config.build);
 }
 
 
-// Watch for changes on files
-function watchTask() {
-    gulp.watch(config.client + '**/*', ['build']);
+// Put HTML Templates into the build directory
+function templatesTask() {
+	var dir = 'responsive';
+	
+	return gulp.src(config.source + dir)
+        .pipe(gulp.dest(config.build));
 }

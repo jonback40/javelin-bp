@@ -9,13 +9,13 @@ module.exports = function() {
     
     // Styles
     var styles = [
-        source + '**/*.{css,less}'
+        source + 'css/*.{css,less}'
     ];
     
     
     // Scripts
     var scripts = [
-        source + '**/*.js'
+        source + 'js/*.js'
     ];
     
     
