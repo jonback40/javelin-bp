@@ -31,8 +31,22 @@ function buildPrompt() {
 		.pipe($.prompt.prompt(config.prompt.inputs, saveResponse));
 	
 	function saveResponse(response) {
-		if (response.type[0] === 'desktop (default)') {
-			response.type[0] = 'default';
+		// Go through each response property (they're either a string or array)
+		// ...if string, find matching key and replace with corresponding value
+		// ...if array,  loop through list, find matching key and replace with corresponding value
+		for (var prop in response) {
+			if (response.hasOwnProperty(prop)) {
+				var value = response[prop],
+					len = value.length;
+				
+				if (value.length) {
+					for (var i = 0; i < len; i++) {
+						response[prop][i] = getMappedParam(value[i]);
+					}
+				} else {
+					response[prop] = getMappedParam(value);
+				}
+			}
 		}
 		
 		response.date = dateString();
@@ -45,13 +59,6 @@ function buildPrompt() {
 // Clean out the build directory before we start another build process
 function cleanTask() {
 	return del(config.build);
-}
-
-
-// Put HTML Templates into the build directory
-function templatesTask() {
-	return gulp.src(config.source + params.type + '/' + config.acceptedTypes)
-        .pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
@@ -74,6 +81,13 @@ function interpolateLessTask() {
 }
 
 
+// Put HTML Templates into the build directory
+function templatesTask() {
+	return gulp.src(config.source + params.type + '/' + config.acceptedTypes)
+        .pipe(gulp.dest(config.build + '/' + params.type));
+}
+
+
 // ----------------------------------------------------------------------------------------------------
 
 
@@ -83,6 +97,12 @@ function dateString() {
 	var date = new Date();
 	
 	return months[date.getMonth()] + ' ' + date.getFullYear();
+}
+
+
+// Return the param value from the 'inputsMap' in the config file. This allows us to manage checkboxes with different labels and values.
+function getMappedParam(param) {
+	return config.prompt.inputsMap[param];
 }
 
 

@@ -5,6 +5,7 @@ module.exports = function() {
     var nodeModules = root + 'node_modules/';
     var build = root + 'build/';
     var source = root + 'src/';
+    var publicScripts = 'public/scripts/';
     
     
     // Inject Plugin
@@ -24,7 +25,11 @@ module.exports = function() {
 				type: 'checkbox',
 				name: 'type',
 				message: 'Which type of site are you generating?',
-				choices: ['desktop (default)', 'mobile', 'responsive']
+				choices: [
+					'desktop (default)',
+					'mobile',
+					'responsive'
+				]
 			},
 			{
 				type: 'input',
@@ -62,7 +67,21 @@ module.exports = function() {
 					'index.js'
 				]
 			}
-		]
+		],
+		
+		inputsMap: {
+			'desktop (default)':			'default',
+			'mobile':						'mobile',
+			'responsive':					'responsive',
+			
+			'less.canvas-panels.js':		publicScripts + 'less/less.canvas-panels.js',
+			'less.dropdown.js':				publicScripts + 'less/less.dropdown.js',
+			'less.search.js':				publicScripts + 'less/less.search.js',
+			'less.simplemodal-video.js':	publicScripts + 'less/less.simplemodal-video.js',
+			
+			'common.js':					'js/common.min.js',
+			'index.js':						'js/index.min.js'
+		}
 	};
     
     
@@ -74,6 +93,7 @@ module.exports = function() {
         nodeModules: nodeModules,
         build: build,
         source: source,
+        publicScripts: publicScripts,
         
         // Globs
         styles: 'css/**/*.{css,less}',
