@@ -20,50 +20,6 @@ gulp.task('interpolateLess', ['templates'], interpolateLessTask);
 
 // Vars
 var params;
-var inputs = [
-	{
-		type: 'checkbox',
-		name: 'type',
-		message: 'Which type of site are you generating?',
-		choices: ['desktop (default)', 'mobile', 'responsive']
-	},
-	{
-		type: 'input',
-		name: 'site',
-		message: 'Javelin site shortname'
-	},
-	{
-		type: 'input',
-		name: 'title',
-		message: 'Project title (or company name)'
-	},
-	{
-		type: 'input',
-		name: 'author',
-		message: 'Author (first and last name)'
-	},
-	{
-		type: 'checkbox',
-		name: 'libs',
-		message: 'Which built-in libraries do you want to include, if any?',
-		choices: [
-			'less.canvas-panels.js',
-			'less.dropdown.js',
-			'less.scrollto.js',
-			'less.search.js',
-			'less.simplemodal-video.js'
-		]
-	},
-	{
-		type: 'checkbox',
-		name: 'scripts',
-		message: 'Which local scripts do you want to include, if any?',
-		choices: [
-			'common.js',
-			'index.js'
-		]
-	}
-];
 
 
 // ----------------------------------------------------------------------------------------------------
@@ -72,7 +28,7 @@ var inputs = [
 // Before we start the build process, prompt the user to provide some input
 function buildPrompt() {
 	return gulp.src(config.root)
-		.pipe($.prompt.prompt(inputs, saveResponse));
+		.pipe($.prompt.prompt(config.prompt.inputs, saveResponse));
 	
 	function saveResponse(response) {
 		if (response.type[0] === 'desktop (default)') {
