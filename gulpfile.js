@@ -11,11 +11,11 @@ gulp.task('default', ['help']);
 
 // Tasks
 gulp.task('prompt', ['clean'], buildPrompt);
-gulp.task('build', ['prompt', 'templates', 'transcludeTemplates', 'transcludeLess']);
+gulp.task('build', ['prompt', 'templates', 'interpolateTemplates', 'interpolateLess']);
 gulp.task('clean', cleanTask);
 gulp.task('templates', ['prompt'], templatesTask);
-gulp.task('transcludeTemplates', ['templates'], transcludeTemplatesTask);
-gulp.task('transcludeLess', ['templates'], transcludeLessTask);
+gulp.task('interpolateTemplates', ['templates'], interpolateTemplatesTask);
+gulp.task('interpolateLess', ['templates'], interpolateLessTask);
 
 
 // Vars
@@ -78,26 +78,22 @@ function templatesTask() {
 }
 
 
-// Transclude input data into the HTML template files
-function transcludeTemplatesTask() {
-	return gulp.src(config.build + '/' + params.type + '/' + config.templates)
-		.pipe($.replace(/\{\{SITE\}\}/g, params.site))
-		.pipe($.replace(/\{\{TITLE\}\}/g, params.title))
-		.pipe(gulp.dest(config.build + '/' + params.type));
+// Interpolate input data into the HTML template files
+function interpolateTemplatesTask() {
+	var src = gulp.src(config.build + '/' + params.type + '/' + config.templates);
+	
+	return interpolate(src).pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
-// Transclude input data into the LESS files (compiler and config)
-function transcludeLessTask() {
-	return gulp.src([
+// Interpolate input data into the LESS files (compiler and config)
+function interpolateLessTask() {
+	var src = gulp.src([
 		config.build + '/' + params.type + '/css/less/compiler.less',
 		config.build + '/' + params.type + '/css/less/config.less'
-	])
-		.pipe($.replace(/\{\{SITE\}\}/g, params.site))
-		.pipe($.replace(/\{\{TITLE\}\}/g, params.title))
-		.pipe($.replace(/\{\{AUTHOR\}\}/g, params.author))
-		.pipe($.replace(/\{\{DATE\}\}/g, params.date))
-		.pipe(gulp.dest(config.build + '/' + params.type + '/css/less/'));
+	]);
+	
+	return interpolate(src).pipe(gulp.dest(config.build + '/' + params.type + '/css/less/'));
 }
 
 
@@ -110,4 +106,14 @@ function dateString() {
 	var date = new Date();
 	
 	return months[date.getMonth()] + ' ' + date.getFullYear();
+}
+
+
+// Interpolate our 'params' data into a file stream
+function interpolate(src) {
+	return src
+		.pipe($.replace(/\{\{SITE\}\}/g, params.site))
+		.pipe($.replace(/\{\{TITLE\}\}/g, params.title))
+		.pipe($.replace(/\{\{AUTHOR\}\}/g, params.author))
+		.pipe($.replace(/\{\{DATE\}\}/g, params.date));
 }
