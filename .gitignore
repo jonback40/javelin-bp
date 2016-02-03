@@ -4,6 +4,9 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# Icon? incidentally prevents files or directories from being named "icons" so we specifically allow it
+!icons
+
 # Logs
 logs
 *.log
