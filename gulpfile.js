@@ -41,6 +41,27 @@ var inputs = [
 		type: 'input',
 		name: 'author',
 		message: 'Author (first and last name)'
+	},
+	{
+		type: 'checkbox',
+		name: 'libs',
+		message: 'Which built-in libraries do you want to include, if any?',
+		choices: [
+			'less.canvas-panels.js',
+			'less.dropdown.js',
+			'less.scrollto.js',
+			'less.search.js',
+			'less.simplemodal-video.js'
+		]
+	},
+	{
+		type: 'checkbox',
+		name: 'scripts',
+		message: 'Which local scripts do you want to include, if any?',
+		choices: [
+			'common.js',
+			'index.js'
+		]
 	}
 ];
 
