@@ -12,7 +12,11 @@ module.exports = function() {
     var inject = {
         options: {
             addRootSlash: false,
-            ignorePath: 'build/',
+            ignorePath: [
+            	'build/default/',
+            	'build/mobile/',
+            	'build/responsive/'
+            ],
             removeTags: true
         }
     };
@@ -96,7 +100,7 @@ module.exports = function() {
         publicScripts: publicScripts,
         
         // Globs
-        styles: 'css/**/*.{css,less}',
+        styles: 'css/**/*.css',
         scripts: 'js/**/*.js',
         images: 'images/**/*.{jpg,jpeg,gif,png,svg}',
         templates: '*.html',

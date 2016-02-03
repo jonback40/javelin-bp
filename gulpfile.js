@@ -11,11 +11,12 @@ gulp.task('default', ['help']);
 
 // Tasks
 gulp.task('prompt', ['clean'], buildPrompt);
-gulp.task('build', ['prompt', 'templates', 'interpolateTemplates', 'interpolateLess']);
+gulp.task('build', ['prompt', 'templates', 'interpolateTemplates', 'interpolateLess', 'inject']);
 gulp.task('clean', cleanTask);
 gulp.task('templates', ['prompt'], templatesTask);
 gulp.task('interpolateTemplates', ['templates'], interpolateTemplatesTask);
 gulp.task('interpolateLess', ['templates'], interpolateLessTask);
+gulp.task('inject', ['interpolateTemplates'], injectTask);
 
 
 // Vars
@@ -59,6 +60,17 @@ function buildPrompt() {
 // Clean out the build directory before we start another build process
 function cleanTask() {
 	return del(config.build);
+}
+
+
+// Inject dependencies into the HTML template files
+function injectTask() {
+    return gulp.src(config.build + '/' + params.type + '/' + config.templates)
+        .pipe($.inject(
+            gulp.src(config.build + '/' + params.type + '/' + config.styles, { read: false }),
+            config.inject.options
+        ))
+        .pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
