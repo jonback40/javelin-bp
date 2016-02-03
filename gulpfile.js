@@ -65,12 +65,18 @@ function cleanTask() {
 
 // Inject dependencies into the HTML template files
 function injectTask() {
-    return gulp.src(config.build + '/' + params.type + '/' + config.templates)
-        .pipe($.inject(
-            gulp.src(config.build + '/' + params.type + '/' + config.styles, { read: false }),
-            config.inject.options
-        ))
-        .pipe(gulp.dest(config.build + '/' + params.type));
+	return gulp.src(config.build + '/' + params.type + '/' + config.templates)
+		.pipe($.inject(
+			gulp.src(config.build + '/' + params.type + '/' + config.styles, { read: false }),
+			config.inject.options
+		))
+		
+		// TODO: Need to fix. Using 'params.libs' as an array of strings does not work here
+		.pipe($.inject(
+			gulp.src(params.libs, { read: false }),
+			config.inject.options
+		))
+		.pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
@@ -96,7 +102,7 @@ function interpolateLessTask() {
 // Put HTML Templates into the build directory
 function templatesTask() {
 	return gulp.src(config.source + params.type + '/' + config.acceptedTypes)
-        .pipe(gulp.dest(config.build + '/' + params.type));
+		.pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
