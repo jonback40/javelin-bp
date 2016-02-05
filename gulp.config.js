@@ -5,7 +5,6 @@ module.exports = function() {
     var nodeModules = root + 'node_modules/';
     var build = root + 'build/';
     var source = root + 'src/';
-    var publicScripts = 'public/scripts/';
     
     
     // Inject Plugin
@@ -80,11 +79,11 @@ module.exports = function() {
             'mobile':                       'mobile',
             'responsive':                   'responsive',
             
-            'jquery.javelin.js':            publicScripts + 'jquery/javelin.jquery.js',
-            'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
-            'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
-            'less.search.js':               publicScripts + 'less/less.search.min.js',
-            'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
+            'jquery.javelin.js':            'public/scripts/jquery/javelin.jquery.js',
+            'less.canvas-panels.js':        'public/scripts/less/less.canvas-panels.min.js',
+            'less.dropdown.js':             'public/scripts/less/less.dropdown.min.js',
+            'less.search.js':               'public/scripts/less/less.search.min.js',
+            'less.simplemodal-video.js':    'public/scripts/less/less.simplemodal-video.min.js',
             
             'common.js':                    'js/common.min.js',
             'index.js':                     'js/index.min.js'
@@ -100,7 +99,6 @@ module.exports = function() {
         nodeModules: nodeModules,
         build: build,
         source: source,
-        publicScripts: publicScripts,
         
         // Globs
         styles: 'css/**/*.css',

@@ -65,9 +65,9 @@ function cleanTask() {
 
 // Inject dependencies into the HTML template files
 function injectTask() {
-	var src = gulp.src(config.build + '/' + params.type + '/' + config.templates);
-	
-	// Inject styles
+    var src = gulp.src(config.build + '/' + params.type + '/' + config.templates);
+    
+    // Inject styles
     src.pipe($.inject(
         gulp.src(config.build + '/' + params.type + '/' + config.styles, { read: false }),
         config.inject.options
@@ -77,10 +77,10 @@ function injectTask() {
     //
     // TODO: Need to fix. Using 'params.libs' as an array of strings does not work here
     if (params.libs) {
-	    src.pipe($.inject(
-	        gulp.src(params.libs, { read: false }),
-	        config.inject.options
-	    ));
+        src.pipe($.inject(
+            gulp.src(params.libs, { read: false }),
+            config.inject.options
+        ));
     }
     
     return src.pipe(gulp.dest(config.build + '/' + params.type));
