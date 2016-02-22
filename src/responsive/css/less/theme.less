@@ -10,13 +10,13 @@
 
 // Custom Images
 .javelin-custom-images({
-	border: @border-base;
-	border-radius: @border-radius-base;
-	box-shadow: @box-shadow-base;
+    border: @border-base;
+    border-radius: @border-radius-base;
+    box-shadow: @box-shadow-base;
 }, {
-	border: 0;
-	border-radius: 0;
-	box-shadow: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0;
 });
 
 
@@ -26,13 +26,13 @@
 
 // Remove floats and margins from images in text modules
 @media (max-width: @screen-xs-max) {
-	.javelin-unfloat-images(javelin_textItem);
+    .javelin-unfloat-images(javelin_textItem);
 }
 
 [class^="grid-"] {
-	@media (max-width: @screen-sm-max) {
-		.javelin-unfloat-images(javelin_textItem);
-	}
+    @media (max-width: @screen-sm-max) {
+        .javelin-unfloat-images(javelin_textItem);
+    }
 }
 
 
@@ -45,39 +45,39 @@
 
 // Icons
 .icon {
-	background-size: 120px 30px;
+    background-size: 120px 30px;
 }
 
-.icon-facebook		{ background-position: 0 0; }
-.icon-twitter		{ background-position: -30px 0; }
-.icon-instagram		{ background-position: -60px 0; }
-.icon-youtube		{ background-position: -90px 0; }
+.icon-facebook      { background-position: 0 0; }
+.icon-twitter       { background-position: -30px 0; }
+.icon-instagram     { background-position: -60px 0; }
+.icon-youtube       { background-position: -90px 0; }
 
 
 // Icon List
 .icon-list {
-	line-height: 1;
-	
-	ul {
-		&:extend(.clearfix all);
-		
-		.list-unstyled();
-		.list-inline(3px);
-		
-		margin-bottom: 0;
-	}
-	
-	a {
-		.transition(opacity @animation-duration-base @animation-timing-function-base);
-		
-		opacity: 1;
-		color: inherit;
-		display: inline-block;
-		
-		&:hover {
-			opacity: .5;
-		}
-	}
+    line-height: 1;
+    
+    ul {
+        &:extend(.clearfix all);
+        
+        .list-unstyled();
+        .list-inline(3px);
+        
+        margin-bottom: 0;
+    }
+    
+    a {
+        .transition(opacity @animation-duration-base @animation-timing-function-base);
+        
+        opacity: 1;
+        color: inherit;
+        display: inline-block;
+        
+        &:hover {
+            opacity: .5;
+        }
+    }
 }
 
 
@@ -90,23 +90,23 @@
 
 // Header
 .page-header {
-	.page-template-index & {
-		
-	}
-	
-	.page-template-inside & {
-		
-	}
+    .page-template-index & {
+        
+    }
+    
+    .page-template-inside & {
+        
+    }
 }
 
 
 // Logo
 .logo {
-	width: 200px;
-	
-	img {
-		.img-responsive();
-	}
+    width: 200px;
+    
+    img {
+        .img-responsive();
+    }
 }
 
 
@@ -119,58 +119,58 @@
 
 // Navigation
 .page-nav {
-	
+    
 }
 
 .page-nav-header {
-	height: @navbar-height;
-	color: #fff;
+    height: @navbar-height;
+    color: #fff;
 }
 
 .page-nav-body {
-	@media (max-width: @screen-sm-max) {
-		.fixed-toolbar();
-		.overflow-scroll(y);
-		.transition-transform(@animation-duration-base @animation-timing-function-base);
-		.translateX(100%);
-		
-		background-color: @brand-primary;
-		top: @navbar-height;
-		bottom: 0;
-		z-index: 100 !important;
-		
-		.is-admin & {
-			top: (60px + @navbar-height);
-		}
-		
-		.is-user & {
-			top: (@userbar-height + @navbar-height);
-		}
-		
-		.nav-is-active & {
-			.translateX(0);
-		}
-	}
+    @media (max-width: @screen-sm-max) {
+        .fixed-toolbar();
+        .overflow-scroll(y);
+        .transition-transform(@animation-duration-base @animation-timing-function-base);
+        .translateX(100%);
+        
+        background-color: @brand-primary;
+        top: @navbar-height;
+        bottom: 0;
+        z-index: 100 !important;
+        
+        .is-admin & {
+            top: (60px + @navbar-height);
+        }
+        
+        .is-user & {
+            top: (@userbar-height + @navbar-height);
+        }
+        
+        .nav-is-active & {
+            .translateX(0);
+        }
+    }
 }
 
 #nav {
-	@media (min-width: @screen-md-min) {
-		#javelin-nav.stacked();
-	}
-	
-	@media (min-width: @screen-md-min) {
-		#javelin-nav.navbar();
-	}
+    @media (min-width: @screen-md-min) {
+        #javelin-nav.stacked();
+    }
+    
+    @media (min-width: @screen-md-min) {
+        #javelin-nav.navbar();
+    }
 }
 
 #subnav {
-	#javelin-nav.stacked();
+    #javelin-nav.stacked();
 }
 
 
 // Navicon
 .navicon {
-	margin-top: -(floor(@navicon-height / 2));
+    margin-top: -(floor(@navicon-height / 2));
 }
 
 
@@ -183,25 +183,25 @@
 
 // Main Content
 .page-main {
-	> .inner {
-		padding-top: @section-spacer;
-		padding-bottom: @section-spacer;
-	}
-	
-	.page-template-index & {
-		
-	}
-	
-	.page-template-inside & {
-		
-	}
+    > .inner {
+        padding-top: @section-spacer;
+        padding-bottom: @section-spacer;
+    }
+    
+    .page-template-index & {
+        
+    }
+    
+    .page-template-inside & {
+        
+    }
 }
 
 
 // Page Title
 .page-title {
-	padding-top: @section-spacer;
-	padding-bottom: @section-spacer;
+    padding-top: @section-spacer;
+    padding-bottom: @section-spacer;
 }
 
 
@@ -214,25 +214,25 @@
 
 // Index Sections
 .index-section {
-	position: relative;
-	z-index: 10 !important;
-	
-	> .inner {
-		padding-top: @section-spacer;
-		padding-bottom: @section-spacer;
-	}
+    position: relative;
+    z-index: 10 !important;
+    
+    > .inner {
+        padding-top: @section-spacer;
+        padding-bottom: @section-spacer;
+    }
 }
 
 .index-section-1 {
-	
+    
 }
 
 .index-section-2 {
-	
+    
 }
 
 .index-section-3 {
-	
+    
 }
 
 
@@ -245,40 +245,40 @@
 
 // Footer
 .page-footer {
-	padding-top: @section-spacer;
-	background-color: @html-bg;
-	color: #fff;
-	
-	.page-template-index & {
-		
-	}
-	
-	.page-template-inside & {
-		
-	}
+    padding-top: @section-spacer;
+    background-color: @html-bg;
+    color: #fff;
+    
+    .page-template-index & {
+        
+    }
+    
+    .page-template-inside & {
+        
+    }
 }
 
 
 // Copyright
 .copyright {
-	
+    
 }
 
 
 // Credit
 .b40-credit {
-	a {
-		color: inherit;
-	}
-	
-	@media (max-width: @screen-xs-max) {
-		max-width: 260px;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-	}
-	
-	@media (min-width: @screen-sm-min) {
-		margin-left: 5px;
-	}
+    a {
+        color: inherit;
+    }
+    
+    @media (max-width: @screen-xs-max) {
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    @media (min-width: @screen-sm-min) {
+        margin-left: 5px;
+    }
 }
