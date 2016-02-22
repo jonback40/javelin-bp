@@ -21,4 +21,4 @@ Located within the `ai` directory are several Adobe Illustrator files and SVG fi
 ###Issues
 **Multiple Templates** - Currently, only one template directory can be generated at a time. So if you are starting a new project that will make use of a separate desktop and mobile website, you have to generate the first template and move it out of the build directory. After that is done, you can generate the second template and do the same.
 
-**Injecting Scripts** - This feature is currently commented out. We wanted to use `gulp-inject` to inject an array of strings as script tags in our html files. This has turned out to be impossible with `gulp-inject` but we may be able to make a compromise by keeping a directory of empty files, properly name so they can be referenced when injecting.
+**Injecting Scripts** - This feature is currently commented out. We wanted to use `gulp-inject` to inject an array of strings as script tags in our html files. This has turned out to be impossible with `gulp-inject` but we may be able to make a compromise by keeping a directory of empty files, properly named so they can be referenced when injecting.

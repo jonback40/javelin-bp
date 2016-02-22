@@ -48,7 +48,8 @@ module.exports = function() {
                 type: 'input',
                 name: 'author',
                 message: 'Author (first and last name)'
-            },
+            }/*
+,
             {
                 type: 'checkbox',
                 name: 'libs',
@@ -72,6 +73,7 @@ module.exports = function() {
                     'index.js'
                 ]
             }
+*/
         ],
         
         inputsMap: {

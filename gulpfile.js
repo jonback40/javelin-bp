@@ -73,6 +73,7 @@ function injectTask() {
         config.inject.options
     ))
     
+/*
     // Inject scripts (optional)
     //
     // TODO: Need to fix. Using 'params.libs' as an array of strings does not work here
@@ -82,6 +83,7 @@ function injectTask() {
             config.inject.options
         ));
     }
+*/
     
     return src.pipe(gulp.dest(config.build + '/' + params.type));
 }
