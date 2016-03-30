@@ -40,7 +40,7 @@ function buildPrompt() {
                 var value = response[prop],
                     len = value.length;
                 
-                if (value.length) {
+                if (Array.isArray(value)) {
                     for (var i = 0; i < len; i++) {
                         response[prop][i] = getMappedParam(value[i]);
                     }
@@ -93,7 +93,8 @@ function injectTask() {
 function interpolateTemplatesTask() {
     var src = gulp.src(config.build + '/' + params.type + '/' + config.templates);
     
-    return interpolate(src).pipe(gulp.dest(config.build + '/' + params.type));
+    return interpolate(src)
+    	.pipe(gulp.dest(config.build + '/' + params.type));
 }
 
 
@@ -104,7 +105,8 @@ function interpolateLessTask() {
         config.build + '/' + params.type + '/css/less/config.less'
     ]);
     
-    return interpolate(src).pipe(gulp.dest(config.build + '/' + params.type + '/css/less/'));
+    return interpolate(src)
+    	.pipe(gulp.dest(config.build + '/' + params.type + '/css/less/'));
 }
 
 
@@ -127,9 +129,12 @@ function dateString() {
 }
 
 
-// Return the param value from the 'inputsMap' in the config file. This allows us to manage checkboxes with different labels and values.
+// Return the param value from the 'inputsMap' in the config file or return the original 'param' if no match is found
+// This allows us to manage checkboxes with different labels and values.
 function getMappedParam(param) {
-    return config.prompt.inputsMap[param];
+	var value = config.prompt.inputsMap[param];
+	
+	return value === undefined ? param : value;
 }
 
 
