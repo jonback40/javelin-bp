@@ -73,17 +73,13 @@ function injectTask() {
         config.inject.options
     ))
     
-/*
-    // Inject scripts (optional)
-    //
-    // TODO: Need to fix. Using 'params.libs' as an array of strings does not work here
-    if (params.libs) {
-        src.pipe($.inject(
-            gulp.src(params.libs, { read: false }),
-            config.inject.options
-        ));
-    }
-*/
+    // Inject public script libraries (if selected) and local scripts
+	params.libs.push(config.source + params.type + '/js/*.js');
+	
+    src.pipe($.inject(
+        gulp.src(params.libs, { read: false }),
+        config.inject.options
+    ));
     
     return src.pipe(gulp.dest(config.build + '/' + params.type));
 }

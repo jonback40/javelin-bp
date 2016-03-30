@@ -5,6 +5,7 @@ module.exports = function() {
     var nodeModules = root + 'node_modules/';
     var build = root + 'build/';
     var source = root + 'src/';
+    var publicScripts = root + 'public/scripts/';
     
     
     // Inject Plugin
@@ -14,7 +15,10 @@ module.exports = function() {
             ignorePath: [
                 'build/default/',
                 'build/mobile/',
-                'build/responsive/'
+                'build/responsive/',
+                'src/default/',
+                'src/mobile/',
+                'src/responsive/'
             ],
             removeTags: true
         }
@@ -48,32 +52,20 @@ module.exports = function() {
                 type: 'input',
                 name: 'author',
                 message: 'Author (first and last name)'
-            }/*
-,
+            },
             {
                 type: 'checkbox',
                 name: 'libs',
                 message: 'Which built-in libraries do you want to include, if any?',
                 choices: [
-                    'jquery.javelin.js',
                     'less.canvas-panels.js',
                     'less.dropdown.js',
-                    'less.parallax.js',
                     'less.scrollto.js',
                     'less.search.js',
-                    'less.simplemodal-video.js'
-                ]
-            },
-            {
-                type: 'checkbox',
-                name: 'scripts',
-                message: 'Which local scripts do you want to include, if any?',
-                choices: [
-                    'common.js',
-                    'index.js'
+                    'less.simplemodal-video.js',
+                    'jquery.javelin.js'
                 ]
             }
-*/
         ],
         
         inputsMap: {
@@ -81,14 +73,12 @@ module.exports = function() {
             'mobile':                       'mobile',
             'responsive':                   'responsive',
             
-            'jquery.javelin.js':            'public/scripts/jquery/javelin.jquery.js',
-            'less.canvas-panels.js':        'public/scripts/less/less.canvas-panels.min.js',
-            'less.dropdown.js':             'public/scripts/less/less.dropdown.min.js',
-            'less.search.js':               'public/scripts/less/less.search.min.js',
-            'less.simplemodal-video.js':    'public/scripts/less/less.simplemodal-video.min.js',
-            
-            'common.js':                    'js/common.min.js',
-            'index.js':                     'js/index.min.js'
+            'less.canvas-panels.js':        root + 'public/scripts/less/less.canvas-panels.min.js',
+            'less.dropdown.js':             root + 'public/scripts/less/less.dropdown.min.js',
+            'less.scrollto.js':             root + 'public/scripts/less/less.scrollto.min.js',
+            'less.search.js':               root + 'public/scripts/less/less.search.min.js',
+            'less.simplemodal-video.js':    root + 'public/scripts/less/less.simplemodal-video.min.js',
+            'jquery.javelin.js':            root + 'public/scripts/jquery/javelin.jquery.js'
         }
     };
     
@@ -101,6 +91,7 @@ module.exports = function() {
         nodeModules: nodeModules,
         build: build,
         source: source,
+        publicScripts: publicScripts,
         
         // Globs
         styles: 'css/**/*.css',
