@@ -25,7 +25,7 @@ module.exports = function() {
     var prompt = {
          inputs: [
             {
-                type: 'checkbox',
+                type: 'list',
                 name: 'type',
                 message: 'Which type of site are you generating?',
                 choices: [
