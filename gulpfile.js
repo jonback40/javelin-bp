@@ -74,7 +74,7 @@ function injectTask() {
     ))
     
     // Inject public script libraries (if selected) and local scripts
-	params.libs.push(config.source + params.type + '/js/*.js');
+	params.libs.push(config.source + params.type + '/' + config.scripts);
 	
     src.pipe($.inject(
         gulp.src(params.libs, { read: false }),

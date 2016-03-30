@@ -94,8 +94,8 @@ module.exports = function() {
         publicScripts: publicScripts,
         
         // Globs
-        styles: 'css/**/*.css',
-        scripts: 'js/**/*.js',
+        styles: 'css/*.css',
+        scripts: 'js/*.js',
         images: 'images/**/*.{jpg,jpeg,gif,png,svg}',
         templates: '*.html',
         
