@@ -63,7 +63,8 @@ module.exports = function() {
                     'less.scrollto.js',
                     'less.search.js',
                     'less.simplemodal-video.js',
-                    'jquery.javelin.js'
+                    'jquery.javelin.js',
+                    'jquery.cycle2.js'
                 ]
             }
         ],
@@ -78,7 +79,8 @@ module.exports = function() {
             'less.scrollto.js':             root + 'public/scripts/less/less.scrollto.min.js',
             'less.search.js':               root + 'public/scripts/less/less.search.min.js',
             'less.simplemodal-video.js':    root + 'public/scripts/less/less.simplemodal-video.min.js',
-            'jquery.javelin.js':            root + 'public/scripts/jquery/javelin.jquery.js'
+            'jquery.javelin.js':            root + 'public/scripts/jquery/javelin.jquery.js',
+            'jquery.cycle2.js':             root + 'public/scripts/jquery/javelin.cycle2.js'
         }
     };
     
