@@ -11,4 +11,4 @@ gulp help         Display a listing of all tasks contained in gulpfile.js.
 ```
 
 ###Additional Files
-Located within the `ai` directory are several Adobe Illustrator files and SVG files that come packaged with newly generated site templates. These are just placeholders and are meant to be replaced. The `.ai` files are also placeholders and are meant to be edited and saved over.
+Located within the `./ai` directory are several Adobe Illustrator files and `.svg` files that come packaged with newly generated site templates. These are just placeholders and are meant to be replaced. The `.ai` files are also placeholders and are meant to be edited and saved over.
