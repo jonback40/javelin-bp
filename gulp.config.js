@@ -74,13 +74,13 @@ module.exports = function() {
             'mobile':                       'mobile',
             'responsive':                   'responsive',
             
-            'less.canvas-panels.js':        root + 'public/scripts/less/less.canvas-panels.min.js',
-            'less.dropdown.js':             root + 'public/scripts/less/less.dropdown.min.js',
-            'less.scrollto.js':             root + 'public/scripts/less/less.scrollto.min.js',
-            'less.search.js':               root + 'public/scripts/less/less.search.min.js',
-            'less.simplemodal-video.js':    root + 'public/scripts/less/less.simplemodal-video.min.js',
-            'jquery.javelin.js':            root + 'public/scripts/jquery/javelin.jquery.js',
-            'jquery.cycle2.js':             root + 'public/scripts/jquery/javelin.cycle2.js'
+            'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
+            'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
+            'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
+            'less.search.js':               publicScripts + 'less/less.search.min.js',
+            'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
+            'jquery.javelin.js':            publicScripts + 'jquery/javelin.jquery.js',
+            'jquery.cycle2.js':             publicScripts + 'jquery/javelin.cycle2.js'
         }
     };
     
