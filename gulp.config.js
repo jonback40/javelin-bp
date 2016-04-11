@@ -1,4 +1,8 @@
 module.exports = function() {
+    // Version
+    var version = '1.0.0';
+    
+    
     // Paths
     var root = './';
     var temp = root + '.tmp/';
@@ -87,6 +91,8 @@ module.exports = function() {
     
     // Config
     var config = {
+	    version: version,
+	    
         // Paths
         root: root,
         temp: temp,

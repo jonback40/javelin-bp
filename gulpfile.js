@@ -137,6 +137,7 @@ function getMappedParam(param) {
 // Interpolate our 'params' data into a file stream
 function interpolate(src) {
     return src
+    	.pipe($.replace(/\{\{VERSION\}\}/g, config.version))
         .pipe($.replace(/\{\{SITE\}\}/g, params.site))
         .pipe($.replace(/\{\{TITLE\}\}/g, params.title))
         .pipe($.replace(/\{\{AUTHOR\}\}/g, params.author))
