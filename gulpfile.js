@@ -73,9 +73,12 @@ function injectTask() {
     src.pipe($.inject(
         gulp.src(workingBuildPath + '/' + config.styles, { read: false }),
         config.inject.options
-    ))
+    ));
     
-    // Inject public script libraries (if selected) and local scripts
+    // Inject the required "common" script for sites using the LESS framework
+    params.libs.unshift(config.publicScripts + 'less/less.common.min.js');
+    
+    // Inject public script libraries (if selected) and local scripts (if available)
     params.libs.push(config.source + params.type + '/' + config.scripts);
     
     src.pipe($.inject(

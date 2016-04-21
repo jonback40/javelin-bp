@@ -78,6 +78,7 @@ module.exports = function() {
             'mobile':                       'mobile',
             'responsive':                   'responsive',
             
+            'less.common.js':               publicScripts + 'less/less.common.min.js',
             'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
             'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
             'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
@@ -91,8 +92,8 @@ module.exports = function() {
     
     // Config
     var config = {
-	    version: version,
-	    
+        version: version,
+        
         // Paths
         root: root,
         temp: temp,
