@@ -64,6 +64,7 @@ module.exports = function() {
                 choices: [
                     'less.canvas-panels.js',
                     'less.dropdown.js',
+                    'less.nav-toggle.js',
                     'less.scrollto.js',
                     'less.search.js',
                     'less.simplemodal-video.js',
@@ -78,9 +79,9 @@ module.exports = function() {
             'mobile':                       'mobile',
             'responsive':                   'responsive',
             
-            'less.common.js':               publicScripts + 'less/less.common.min.js',
             'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
             'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
+            'less.nav-toggle.js':           publicScripts + 'less/less.nav-toggle.min.js',
             'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
             'less.search.js':               publicScripts + 'less/less.search.min.js',
             'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
