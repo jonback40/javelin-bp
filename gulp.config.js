@@ -33,7 +33,7 @@ module.exports = function() {
     var prompt = {
          inputs: [
             {
-                type: 'list',
+                type: 'rawlist',
                 name: 'type',
                 message: 'Which type of site are you generating?',
                 choices: [
