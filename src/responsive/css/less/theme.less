@@ -24,13 +24,13 @@
 //.custom-bolditalic(@font-family-proximanova-bold; @font-family-proximanova-italic; @font-family-proximanova-bolditalic);
 
 
-// Remove floats and margins from images in text modules
-@media (max-width: @screen-xs-max) {
+// Remove floats and margins from shared content in text modules
+@media (@screen-sm-down) {
     .javelin-unfloat-images(javelin_textItem);
 }
 
 [class^="grid-"] {
-    @media (max-width: @screen-sm-max) {
+    @media (@screen-md-down) {
         .javelin-unfloat-images(javelin_textItem);
     }
 }
@@ -75,7 +75,7 @@
 
 // Logo
 .logo {
-    width: 200px;
+    width: 96px;
     
     img {
         .img-responsive();
@@ -92,46 +92,34 @@
 
 // Navigation
 .page-nav {
-    
+    background-color: @brand-primary;
+    box-shadow: @box-shadow-base;
 }
 
 .page-nav-header {
-    height: @navbar-height;
-    color: #fff;
+    @media (@page-nav-breakpoint-up) {
+        float: left;
+    }
 }
 
 .page-nav-body {
-    @media (max-width: @screen-sm-max) {
-        .fixed-toolbar();
-        .overflow-scroll(y);
-        .transition-transform(@animation-duration-base @animation-timing-function-base);
-        .translateX(100%);
-        
-        background-color: @brand-primary;
-        top: @navbar-height;
-        bottom: 0;
-        z-index: 100 !important;
-        
-        .is-admin & {
-            top: (60px + @navbar-height);
-        }
-        
-        .is-user & {
-            top: (@userbar-height + @navbar-height);
-        }
-        
-        .nav-is-active & {
-            .translateX(0);
-        }
+    @media (@page-nav-breakpoint-down) {
+        background-color: darken(@brand-primary, 20%);
+    }
+    
+    @media (@page-nav-breakpoint-up) {
+        float: right;
     }
 }
 
 #nav {
-    @media (max-width: @screen-sm-max) {
+    @media (@page-nav-breakpoint-down) {
         #javelin-nav.stacked();
+        
+        margin-top: 20px;
     }
     
-    @media (min-width: @screen-md-min) {
+    @media (@page-nav-breakpoint-up) {
         #javelin-nav.navbar();
     }
 }
@@ -221,6 +209,7 @@
     padding-top: @section-spacer;
     background-color: @html-bg;
     color: #fff;
+    text-align: center;
     
     .page-template-index & {
         
@@ -244,14 +233,14 @@
         color: inherit;
     }
     
-    @media (max-width: @screen-xs-max) {
+    @media (@page-nav-breakpoint-down) {
         max-width: 260px;
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
     
-    @media (min-width: @screen-sm-min) {
+    @media (@page-nav-breakpoint-up) {
         margin-left: 5px;
     }
 }

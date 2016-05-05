@@ -22,88 +22,90 @@
 
 <body>
     <div class="page">
-        <div class="canvas">
-            <header class="page-header">
+        <header class="page-header page-nav-spacer">
+            <nav class="page-nav fixed-when-active">
                 <div class="container-fluid">
-                    
-                    <h2 class="logo">
-                        <a href="/" title="{{TITLE}}">
-                            <img src="/sites/{{SITE}}/templates/mobile/images/logo.svg" alt="{{TITLE}}">
-                        </a>
-                    </h2>
-                    
-                    <button type="button" class="navicon navicon-dismissible open-right-canvas">
-                        <span class="sr">Toggle Navigation</span>
-                        <span class="navicon-bar"></span>
-                        <span class="navicon-bar"></span>
-                        <span class="navicon-bar"></span>
-                    </button>
-                    
-                </div>
-            </header>
-            <main class="page-main">
-                <div class="page-title">
-                    <div class="container-fluid">
+                    <div class="page-nav-header">
+                        <h2 class="logo">
+                            <a href="/" title="{{TITLE}}">
+                                <img src="/sites/{{SITE}}/templates/default/images/logo.svg" alt="{{TITLE}}">
+                            </a>
+                        </h2>
                         
-                        <h1 class="pageTitle"><!tag:title show="page" /!></h1>
-                        
+                        <button type="button" class="navicon navicon-dismissible" data-toggle-nav="#nav-menu">
+                            <span class="sr">Toggle Navigation</span>
+                            <span class="navicon-bar"></span>
+                            <span class="navicon-bar"></span>
+                            <span class="navicon-bar"></span>
+                        </button>
                     </div>
-                </div>
-                <div class="inner">
-                    <div class="container-fluid">
-                        
-                        <div class="default-region">
-                            <!region:default type="default" /!>
+                    <div class="page-nav-body page-nav-slide-left" id="nav-menu">
+                        <div class="page-nav-content">
+                            <!nav id="nav" type="nested" /!>
                         </div>
-                        
                     </div>
                 </div>
-            </main>
-            <footer class="page-footer">
+            </nav>
+        </header>
+        <main class="page-main">
+            <div class="page-title">
                 <div class="container-fluid">
                     
-                    <div class="icon-list">
-                        <ul>
-                            <li>
-                                <a href="http://facebook.com/">
-                                    <span class="icon icon-facebook"></span>
-                                    <span class="sr">Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://twitter.com/">
-                                    <span class="icon icon-twitter"></span>
-                                    <span class="sr">Twitter</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://instagram.com/">
-                                    <span class="icon icon-instagram"></span>
-                                    <span class="sr">Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://youtube.com/" target="_blank">
-                                    <span class="icon icon-youtube"></span>
-                                    <span class="sr">YouTube</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <h1 class="pageTitle"><!tag:title show="page" /!></h1>
                     
-                    <div class="copyright">&copy;<!tag:date format="Y" /!> {{TITLE}}</div>
-                    <div class="b40-credit"><!back40:credit /!></div>
-                    
-                    <div class="fullsite-link">
-                        <a href="?fromMobile=false">View Full Site</a>
-                    </div>
-                
                 </div>
-            </footer>
-        </div>
-        <div class="canvas-right">
-            <!nav id="nav" type="nested" /!>
-        </div>
+            </div>
+            <div class="inner">
+                <div class="container-fluid">
+                    
+                    <div class="default-region">
+                        <!region:default type="default" /!>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <div class="container-fluid">
+                
+                <div class="icon-list">
+                    <ul>
+                        <li>
+                            <a href="http://facebook.com/" target="_blank">
+                                <span class="icon icon-facebook"></span>
+                                <span class="sr">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/" target="_blank">
+                                <span class="icon icon-twitter"></span>
+                                <span class="sr">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://instagram.com/" target="_blank">
+                                <span class="icon icon-instagram"></span>
+                                <span class="sr">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/" target="_blank">
+                                <span class="icon icon-youtube"></span>
+                                <span class="sr">YouTube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="copyright">&copy;<!tag:date format="Y" /!> {{TITLE}}</div>
+                <div class="b40-credit"><!back40:credit /!></div>
+                
+                <div class="fullsite-link">
+                    <a href="?fromMobile=false">View Full Site</a>
+                </div>
+            
+            </div>
+        </footer>
     </div>
     
     <!-- inject:js -->
