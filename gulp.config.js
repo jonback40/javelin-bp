@@ -33,16 +33,6 @@ module.exports = function() {
     var prompt = {
          inputs: [
             {
-                type: 'rawlist',
-                name: 'type',
-                message: 'Which type of site are you generating?',
-                choices: [
-                    'desktop (default)',
-                    'mobile',
-                    'responsive'
-                ]
-            },
-            {
                 type: 'input',
                 name: 'site',
                 message: 'Javelin site shortname'
@@ -75,10 +65,6 @@ module.exports = function() {
         ],
         
         inputsMap: {
-            'desktop (default)':            'default',
-            'mobile':                       'mobile',
-            'responsive':                   'responsive',
-            
             'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
             'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
             'less.nav-toggle.js':           publicScripts + 'less/less.nav-toggle.min.js',

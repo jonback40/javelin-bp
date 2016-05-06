@@ -1,4 +1,5 @@
-var gulp = require('gulp');
+// var gulp = require('gulp');
+var gulp = require('gulp-param')(require('gulp'), process.argv);
 var config = require('./gulp.config')();
 var $ = require('gulp-load-plugins')({ lazy: true });
 var del = require('del');
@@ -28,7 +29,27 @@ var params,
 
 
 // Before we start the build process, prompt the user to provide some input
-function buildPrompt() {
+function buildPrompt(desktop, mobile, responsive) {
+    // Set the type of project files to generate
+    var type;
+    
+    if (desktop) {
+        type = 'default';
+    } else if (mobile) {
+        type = 'mobile';
+    } else if (responsive) {
+        type = 'responsive';
+    } else {
+        // Instead of dealing with error handling, just output a message and cancel the task
+        console.log('Error: Please specify a project type:');
+        console.log('usage: gulp build [--desktop]');
+        console.log('                  [--mobile]');
+        console.log('                  [--responsive]');
+        
+        // Cancel
+        return;
+    }
+    
     return gulp.src(config.root)
         .pipe($.prompt.prompt(config.prompt.inputs, saveResponse));
     
@@ -52,6 +73,7 @@ function buildPrompt() {
         }
         
         response.date = dateString();
+        response.type = type;
         
         params = response;
         workingBuildPath = config.build + '/' + params.type;
