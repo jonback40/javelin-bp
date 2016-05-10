@@ -56,7 +56,7 @@ module.exports = function() {
                     'less.dropdown.js',
                     'less.nav-toggle.js',
                     'less.scrollto.js',
-                    'less.search.js',
+                    'less.search-collapse.js',
                     'less.simplemodal-video.js',
                     'jquery.javelin.js',
                     'jquery.cycle2.js'
@@ -69,7 +69,7 @@ module.exports = function() {
             'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
             'less.nav-toggle.js':           publicScripts + 'less/less.nav-toggle.min.js',
             'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
-            'less.search.js':               publicScripts + 'less/less.search.min.js',
+            'less.search-collapse.js':      publicScripts + 'less/less.search-collapse.min.js',
             'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
             'jquery.javelin.js':            publicScripts + 'jquery/javelin.jquery.js',
             'jquery.cycle2.js':             publicScripts + 'jquery/javelin.cycle2.js'
