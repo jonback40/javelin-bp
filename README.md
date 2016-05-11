@@ -11,9 +11,9 @@ Boilerplate build process for starting a new site in Javelin CMS.
 There are more tasks at work during the build process, but these three should be the only ones you need to work with.
 
 ```
-gulp build        Start the build process.
-gulp clean        Remove build files completely. This automatically happens when using the build task.
-gulp help         Display a listing of all tasks contained in gulpfile.js.
+gulp build [--type]    Start the build process by using either param: --desktop, --mobile or --responsive.
+gulp clean             Remove build files completely. This automatically happens when using the build task.
+gulp help              Display a listing of all tasks contained in gulpfile.js.
 ```
 
 ###Additional Files
@@ -21,6 +21,6 @@ Located within the `./ai` directory are several Adobe Illustrator files and `.sv
 
 
 ###Usage
-The `gulp build` command will guide you through the process of generating boilerplate files for either a **desktop**, **mobile** or **responsive** website project. Once the task is complete, you must locate the `./build` directory that was created by the task and move its contents to your project.
+The `gulp build [--type]` command will guide you through the process of generating boilerplate files for either a **desktop**, **mobile** or **responsive** website project. Once the task is complete, you must locate the `./build` directory that was created by the task and move its contents to your project.
 
 If you are generating files for both a **desktop and mobile** site, you have to generate them separately and move the generated files after each build, otherwise the `clean` task will remove the previous build files and you will need to regenerate them.
