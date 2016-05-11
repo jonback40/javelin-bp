@@ -126,6 +126,16 @@
 
 #subnav {
     #javelin-nav.stacked();
+    
+    // Overly specific here to override styles from the built-in framework styles
+    li a {
+        color: @brand-primary;
+        
+        &:hover,
+        &:focus {
+            color: fade(@brand-primary, 50%);
+        }
+    }
 }
 
 
