@@ -127,25 +127,9 @@
 #subnav {
     #javelin-nav.stacked();
     
-    #javelin-nav.stacked-link({
-        padding-left: 0;
-        padding-right: 0;
-    });
-    
-    #javelin-nav.stacked-nested-link({
-        padding-left: @navstack-nested-indent;
-        padding-right: 0;
-    });
-    
-    // Overly specific here to override styles from the built-in framework styles
-    li a {
-        color: @brand-primary;
-        
-        &:hover,
-        &:focus {
-            color: fade(@brand-primary, 50%);
-        }
-    }
+    padding: 5px;
+    background-color: @brand-primary;
+    border-radius: @border-radius-base;
 }
 
 
