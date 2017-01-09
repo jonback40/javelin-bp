@@ -1,19 +1,22 @@
-module.exports = function() {
+'use strict';
+
+
+module.exports = () => {
     // Version
-    var version = '1.0.0';
+    let version = '1.0.0';
     
     
     // Paths
-    var root = './';
-    var temp = root + '.tmp/';
-    var nodeModules = root + 'node_modules/';
-    var build = root + 'build/';
-    var source = root + 'src/';
-    var publicScripts = root + 'public/scripts/';
+    let root = './';
+    let temp = root + '.tmp/';
+    let nodeModules = root + 'node_modules/';
+    let build = root + 'build/';
+    let src = root + 'src/';
+    let publicScripts = root + 'public/scripts/';
     
     
     // Inject Plugin
-    var inject = {
+    let inject = {
         options: {
             addRootSlash: false,
             ignorePath: [
@@ -30,7 +33,7 @@ module.exports = function() {
     
     
     // Prompt Plugin
-    var prompt = {
+    let prompt = {
          inputs: [
             {
                 type: 'input',
@@ -78,7 +81,8 @@ module.exports = function() {
     
     
     // Config
-    var config = {
+    let config = {
+         // Version
         version: version,
         
         // Paths
@@ -86,7 +90,7 @@ module.exports = function() {
         temp: temp,
         nodeModules: nodeModules,
         build: build,
-        source: source,
+        src: src,
         publicScripts: publicScripts,
         
         // Globs
@@ -98,10 +102,11 @@ module.exports = function() {
         // Acceptable File Types (markup, styles, scripts, images, fonts)
         acceptedTypes: '**/*.{html,css,less,js,jpg,jpeg,gif,ico,png,svg,eot,ttf,woff,woff2}',
         
-        // Plugins
+        // Plugin Configurations
         inject: inject,
         prompt: prompt
     };
+    
     
     return config;
 };
