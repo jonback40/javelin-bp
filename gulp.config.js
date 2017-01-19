@@ -61,6 +61,7 @@ module.exports = () => {
                     'less.scrollto.js',
                     'less.search-collapse.js',
                     'less.simplemodal-video.js',
+                    'less.svg-replace.js',
                     'jquery.javelin.js',
                     'jquery.cycle2.js'
                 ]
@@ -74,6 +75,7 @@ module.exports = () => {
             'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
             'less.search-collapse.js':      publicScripts + 'less/less.search-collapse.min.js',
             'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
+            'less.svg-replace.js':          publicScripts + 'less/less.svg-replace.min.js',
             'jquery.javelin.js':            publicScripts + 'jquery/javelin.jquery.js',
             'jquery.cycle2.js':             publicScripts + 'jquery/javelin.cycle2.js'
         }
