@@ -16,9 +16,6 @@ gulp clean             Remove build files completely. This automatically happens
 gulp help              Display a listing of all tasks contained in gulpfile.js.
 ```
 
-### Additional Files
-Located within the `./ai` directory are several Adobe Illustrator files and `.svg` files that come packaged with newly generated site templates. These are just placeholders and are meant to be replaced. The `.ai` files are also placeholders and are meant to be edited and saved over.
-
 
 ### Usage
 The `gulp build [--type]` command will guide you through the process of generating boilerplate files for either a **desktop**, **mobile** or **responsive** website project. Once the task is complete, you must locate the `./build` directory that was created by the task and move its contents to your project.
