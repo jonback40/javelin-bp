@@ -47,6 +47,19 @@
 .icon-search        { background-position: 0 -30px; }
 
 
+// Page
+.page {
+    .transition-transform(.4s @animation-timing-function-base);
+    .translateX(0%);
+    
+    background-color: @body-bg;
+    
+    .nav-is-active & {
+        .translateX(-80%);
+    }
+}
+
+
 
 
 // ----------------------------------------------------------------------------------------------------
@@ -56,6 +69,8 @@
 
 // Header
 .page-header {
+    background-color: #ddd;
+    
     .page-template-index & {
         
     }
@@ -68,8 +83,8 @@
 
 // Logo
 .logo {
-    width: 96px;
-    height: 40px;
+    width: 240px;
+    height: 100px;
     
     img {
         .img-responsive();
@@ -86,11 +101,20 @@
 
 // Navigation
 .page-nav {
+    .transition-transform(.4s @animation-timing-function-base);
+    .translateX(100%);
+    
+    width: 80%;
     background-color: @brand-primary;
-}
-
-.page-nav-body {
-    background-color: darken(@brand-primary, 20%);
+    z-index: 4 !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    .nav-is-active & {
+        .translateX(0%);
+    }
 }
 
 #nav {
