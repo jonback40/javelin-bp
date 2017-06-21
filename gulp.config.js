@@ -3,20 +3,20 @@
 
 module.exports = () => {
     // Version
-    let version = '1.0.0';
+    const version = '1.0.0';
     
     
     // Paths
-    let root = './';
-    let temp = root + '.tmp/';
-    let nodeModules = root + 'node_modules/';
-    let build = root + 'build/';
-    let src = root + 'src/';
-    let publicScripts = root + 'public/scripts/';
+    const root = './';
+    const temp = root + `${root}.tmp/`;
+    const nodeModules = `${root}node_modules/`;
+    const build = `${root}build/`;
+    const src = `${root}src/`;
+    const publicScripts = `${root}public/scripts/`;
     
     
-    // Inject Plugin
-    let inject = {
+    // Inject plugin config
+    const inject = {
         options: {
             addRootSlash: false,
             ignorePath: [
@@ -32,8 +32,8 @@ module.exports = () => {
     };
     
     
-    // Prompt Plugin
-    let prompt = {
+    // Prompt plugin config
+    const prompt = {
          inputs: [
             {
                 type: 'input',
@@ -69,31 +69,31 @@ module.exports = () => {
         ],
         
         inputsMap: {
-            'less.canvas-panels.js':        publicScripts + 'less/less.canvas-panels.min.js',
-            'less.dropdown.js':             publicScripts + 'less/less.dropdown.min.js',
-            'less.nav-toggle.js':           publicScripts + 'less/less.nav-toggle.min.js',
-            'less.scrollto.js':             publicScripts + 'less/less.scrollto.min.js',
-            'less.search-collapse.js':      publicScripts + 'less/less.search-collapse.min.js',
-            'less.simplemodal-video.js':    publicScripts + 'less/less.simplemodal-video.min.js',
-            'less.svg-replace.js':          publicScripts + 'less/less.svg-replace.min.js',
-            'jquery.javelin.js':            publicScripts + 'jquery/javelin.jquery.js',
-            'jquery.cycle2.js':             publicScripts + 'jquery/javelin.cycle2.js'
+            'less.canvas-panels.js':        `${publicScripts}less/less.canvas-panels.min.js`,
+            'less.dropdown.js':             `${publicScripts}less/less.dropdown.min.js`,
+            'less.nav-toggle.js':           `${publicScripts}less/less.nav-toggle.min.js`,
+            'less.scrollto.js':             `${publicScripts}less/less.scrollto.min.js`,
+            'less.search-collapse.js':      `${publicScripts}less/less.search-collapse.min.js`,
+            'less.simplemodal-video.js':    `${publicScripts}less/less.simplemodal-video.min.js`,
+            'less.svg-replace.js':          `${publicScripts}less/less.svg-replace.min.js`,
+            'jquery.javelin.js':            `${publicScripts}jquery/javelin.jquery.js`,
+            'jquery.cycle2.js':             `${publicScripts}jquery/javelin.cycle2.js`
         }
     };
     
     
     // Config
-    let config = {
+    const config = {
          // Version
-        version: version,
+        version,
         
         // Paths
-        root: root,
-        temp: temp,
-        nodeModules: nodeModules,
-        build: build,
-        src: src,
-        publicScripts: publicScripts,
+        root,
+        temp,
+        nodeModules,
+        build,
+        src,
+        publicScripts,
         
         // Globs
         styles: 'css/*.css',
@@ -105,8 +105,8 @@ module.exports = () => {
         acceptedTypes: '**/*.{html,css,less,js,jpg,jpeg,gif,ico,png,svg,eot,ttf,woff,woff2}',
         
         // Plugin Configurations
-        inject: inject,
-        prompt: prompt
+        inject,
+        prompt
     };
     
     
